@@ -1,0 +1,25 @@
+{
+  "name": "insane-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development",
+    "prod": "cross-env NODE_ENV=production webpack --mode production",
+    "clear": "rd /s /q dist",
+    "server": "json-server --watch db/db.json --port=1808"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "json-server": "^0.16.3",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "ts-loader": "^9.5.1"
+  }
+}
