@@ -3,6 +3,7 @@ import { rennderMessage } from "./renderMessage"
 
 export const formSend = (id: string) => {
     const form = document.getElementById(id)
+    const allInputs = form!.querySelectorAll('input')
     const checkbox: HTMLFormElement | null = form!.querySelector('input[type="checkbox"]')
 
     const formSendServer = (data: DataForm) => {
@@ -18,7 +19,7 @@ export const formSend = (id: string) => {
     const isFromValue = (inputs: NodeList) => {
         let succes = false
         succes = Array.from(inputs).every((input) => {
-            if((input as HTMLInputElement).value === ''){
+            if((input as HTMLInputElement).value === '' && (input as HTMLInputElement).type !== 'checkbox'){
                 return false
             } else{
                 return true
@@ -30,7 +31,6 @@ export const formSend = (id: string) => {
 
     const dataPreporation = (form: HTMLFormElement) => {
         const formData = new FormData(form)
-        const allInputs = form!.querySelectorAll('input')
         const dataBody: DataForm = {}
 
         formData.forEach((value, key) => {

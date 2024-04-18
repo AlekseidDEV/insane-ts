@@ -8109,20 +8109,18 @@ div.wave-block:nth-child(17):after {
 }
 
 .warn_modal {
-    display: none;
+    visibility: hidden;
+    display: flex;
 }
 
 .error_modal {
-    display: none;
-}
-
-.succes_modal {
-    display: none;
+    visibility: hidden;
+    display: flex;
 }
 
 .warn_modal,
-.error_modal,
-.succes_modal {
+.error_modal
+ {
     width: 100%;
     height: 100%;
     position: fixed;

@@ -3,13 +3,13 @@ export const rennderMessage = (status: number) => {
 
     switch(status){
         case 2:
-            (modalsAjax[status] as HTMLElement).style.display = 'flex'
+            (modalsAjax[status] as HTMLElement).style.visibility = 'visible'
             break
         case 1:
-            (modalsAjax[status] as HTMLElement).style.display = 'flex'
+            (modalsAjax[status] as HTMLElement).style.visibility = 'visible'
             break
         case 0:
-            (modalsAjax[status] as HTMLElement).style.display = 'flex'
+            (modalsAjax[status] as HTMLElement).style.visibility = 'visible'
             break
     }
 
@@ -17,9 +17,9 @@ export const rennderMessage = (status: number) => {
         modal.addEventListener('click', (e) => {
             e.preventDefault()
             if(e.target === modal){
-                (modal as HTMLElement).style.display = 'none'
-            } else if((e.target as HTMLElement).matches('.close_message')){
-                (modal as HTMLElement).style.display = 'none'
+                (modal as HTMLElement).style.visibility = 'hidden'
+            } else if((e.target as HTMLElement).matches('.close_ajax')){
+                (modal as HTMLElement).style.visibility = 'hidden'
             }
         })
     })

@@ -13,6 +13,7 @@
 	<script src="./dist/bundle.js" defer></script>
 	<title>Relax Live</title></head>
 <body>
+	<a href="#">test</a>
 	<div class="main" id="main">
 		<header class="header">
 			<div class="header-contacts">
@@ -1268,9 +1269,9 @@
 				</div>
 			</form>
 		</div><!-- /feedback --></div><!-- /popup consultation -->
-	<div class="popup popup-thank">
+	<div class="popup popup-thank modal_ajax">
 		<div class="feedback-wrap popup-thank-bg">
-			<div class="close close-thank">
+			<div class="close close-thank close_ajax">
 				<svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
 					<mask id="a" fill="#fff">
 						<path fill-rule="evenodd" clip-rule="evenodd"
@@ -2215,17 +2216,7 @@
 		</div>
 	</div>
 
-	<div class="succes_modal modal_ajax">
-		<div class="wrapp_cont">
-			<img src="./images/succes.svg" alt="img">
-			<p class="title_message">Форма отправлена</p>
-			<p class="desk_respons">
-				скоро с вами свяжется наш менеджер
-			</p>
 
-			<a href="#" class="close_message">X</a>
-		</div>
-	</div>
 
 	<div class="warn_modal modal_ajax">
 		<div class="wrapp_cont">
@@ -2234,7 +2225,7 @@
 			<p class="desk_respons">
 				В полях ввода есть ошибки, или они пустые
 			</p>
-			<a href="#" class="close_message">X</a>
+			<a href="#" class="close_message close_ajax">X</a>
 		</div>
 	</div>
 
@@ -2245,7 +2236,7 @@
 			<p class="desk_respons">
 				Ошибка отправки, повторите попытку позже
 			</p>
-			<a href="#" class="close_message">X</a>
+			<a href="#" class="close_message close_ajax">X</a>
 		</div>
 	</div>
 </body>
