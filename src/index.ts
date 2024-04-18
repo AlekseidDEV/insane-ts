@@ -5,6 +5,7 @@ import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { privacyPopup } from "./modules/privacyPopup";
 import { smoothScroll } from "./modules/smoothScroll";
+import { tips } from "./modules/tips";
 
 numAccordion()
 
@@ -29,4 +30,5 @@ formSend("feedback5")
 formSend("feedback6")
 
 privacyPopup()
+tips()
 
