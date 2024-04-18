@@ -18,3 +18,4 @@ document.querySelector('.button-footer')?.addEventListener('click', (e) => {
 })
 
 maskPhone('input[name="phone"]')
+
