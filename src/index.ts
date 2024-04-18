@@ -3,6 +3,7 @@ import { numAccordion } from "./modules/accordNumber";
 import { formSend } from "./modules/formSend";
 import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
+import { privacyPopup } from "./modules/privacyPopup";
 import { smoothScroll } from "./modules/smoothScroll";
 
 numAccordion()
@@ -26,4 +27,6 @@ formSend("feedback3")
 formSend("feedback4")
 formSend("feedback5")
 formSend("feedback6")
+
+privacyPopup()
 
