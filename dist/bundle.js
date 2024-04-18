@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst accordNumber_1 = __webpack_require__(/*! ./modules/accordNumber */ \"./src/modules/accordNumber.ts\");\nconst menu_1 = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.ts\");\n(0, accordNumber_1.numAccordion)();\nif (window.innerWidth > 576) {\n    (0, menu_1.menuFunc)(\"translate3d(0px, 0px, 0px)\", \"translate3d(645px, 0px, 0px)\");\n}\nelse {\n    (0, menu_1.menuFunc)(\"translate3d(0px, 0px, 0px)\", \"translate3d(0px, 750px, 0px)\");\n}\n\n\n//# sourceURL=webpack://insane-ts/./src/index.ts?");
+eval("\nvar _a;\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst accordNumber_1 = __webpack_require__(/*! ./modules/accordNumber */ \"./src/modules/accordNumber.ts\");\nconst menu_1 = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.ts\");\nconst smoothScroll_1 = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.ts\");\n(0, accordNumber_1.numAccordion)();\nif (window.innerWidth > 576) {\n    (0, menu_1.menuFunc)(\"translate3d(0px, 0px, 0px)\", \"translate3d(645px, 0px, 0px)\");\n}\nelse {\n    (0, menu_1.menuFunc)(\"translate3d(0px, 0px, 0px)\", \"translate3d(0px, 750px, 0px)\");\n}\n(_a = document.querySelector('.button-footer')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', (e) => {\n    e.preventDefault();\n    (0, smoothScroll_1.smoothScroll)(e.target.hash);\n});\n\n\n//# sourceURL=webpack://insane-ts/./src/index.ts?");
 
 /***/ }),
 
@@ -34,9 +34,29 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexpo
 /*!*****************************!*\
   !*** ./src/modules/menu.ts ***!
   \*****************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.menuFunc = void 0;\nconst smoothScroll_1 = __webpack_require__(/*! ./smoothScroll */ \"./src/modules/smoothScroll.ts\");\nconst menuFunc = (openStyle, closeStyle) => {\n    const popupWindow = document.querySelector(\".popup-menu\");\n    const popupMenu = document.querySelector(\".popup-dialog-menu\");\n    const linkMenu = document.querySelector(\".menu__icon\");\n    const openMenu = (e) => {\n        e.preventDefault();\n        if (e.target === linkMenu) {\n            popupWindow.style.visibility = \"visible\";\n            popupMenu.style.transform = openStyle;\n        }\n        else if (e.target.closest(\".close-menu\") ||\n            e.target === popupWindow) {\n            popupWindow.style.visibility = \"hidden\";\n            popupMenu.style.transform = closeStyle;\n        }\n        else if (e.target.matches(\".menu-link\")) {\n            popupWindow.style.visibility = \"hidden\";\n            popupMenu.style.transform = closeStyle;\n            (0, smoothScroll_1.smoothScroll)(e.target.hash);\n        }\n    };\n    linkMenu === null || linkMenu === void 0 ? void 0 : linkMenu.addEventListener(\"click\", openMenu);\n    popupWindow === null || popupWindow === void 0 ? void 0 : popupWindow.addEventListener(\"click\", openMenu);\n};\nexports.menuFunc = menuFunc;\n\n\n//# sourceURL=webpack://insane-ts/./src/modules/menu.ts?");
+
+/***/ }),
+
+/***/ "./src/modules/repairPopupOpen.ts":
+/*!****************************************!*\
+  !*** ./src/modules/repairPopupOpen.ts ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.menuFunc = void 0;\nconst menuFunc = (openStyle, closeStyle) => {\n    const popupWindow = document.querySelector(\".popup-menu\");\n    const popupMenu = document.querySelector(\".popup-dialog-menu\");\n    const linkMenu = document.querySelector(\".menu__icon\");\n    const openMenu = (e) => {\n        if (e.target === linkMenu) {\n            popupWindow.style.visibility = \"visible\";\n            popupMenu.style.transform = openStyle;\n        }\n        else if (e.target.closest(\".close-menu\") ||\n            e.target === popupWindow) {\n            popupWindow.style.visibility = \"hidden\";\n            popupMenu.style.transform = closeStyle;\n        }\n        else if (e.target.matches(\".menu-link\")) {\n            popupWindow.style.visibility = \"hidden\";\n            popupMenu.style.transform = closeStyle;\n        }\n    };\n    linkMenu === null || linkMenu === void 0 ? void 0 : linkMenu.addEventListener(\"click\", openMenu);\n    popupWindow === null || popupWindow === void 0 ? void 0 : popupWindow.addEventListener(\"click\", openMenu);\n};\nexports.menuFunc = menuFunc;\n\n\n//# sourceURL=webpack://insane-ts/./src/modules/menu.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.repairPopupOpen = void 0;\nconst repairPopupOpen = () => {\n    const windowRepair = document.querySelector('.popup-repair-types');\n    windowRepair.style.visibility = 'visible';\n    windowRepair === null || windowRepair === void 0 ? void 0 : windowRepair.addEventListener('click', (e) => {\n        if (e.target === windowRepair) {\n            windowRepair.style.visibility = 'hidden';\n        }\n    });\n};\nexports.repairPopupOpen = repairPopupOpen;\n\n\n//# sourceURL=webpack://insane-ts/./src/modules/repairPopupOpen.ts?");
+
+/***/ }),
+
+/***/ "./src/modules/smoothScroll.ts":
+/*!*************************************!*\
+  !*** ./src/modules/smoothScroll.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.smoothScroll = void 0;\nconst repairPopupOpen_1 = __webpack_require__(/*! ./repairPopupOpen */ \"./src/modules/repairPopupOpen.ts\");\nconst smoothScroll = (id) => {\n    var _a;\n    if (id) {\n        (_a = document.getElementById(id.slice(1))) === null || _a === void 0 ? void 0 : _a.scrollIntoView({\n            behavior: 'smooth',\n            block: 'start'\n        });\n    }\n    else {\n        (0, repairPopupOpen_1.repairPopupOpen)();\n    }\n};\nexports.smoothScroll = smoothScroll;\n\n\n//# sourceURL=webpack://insane-ts/./src/modules/smoothScroll.ts?");
 
 /***/ })
 
