@@ -1,5 +1,6 @@
 
 import { numAccordion } from "./modules/accordNumber";
+import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { smoothScroll } from "./modules/smoothScroll";
 
@@ -15,3 +16,5 @@ document.querySelector('.button-footer')?.addEventListener('click', (e) => {
     e.preventDefault()
     smoothScroll((e.target as HTMLAnchorElement).hash)
 })
+
+maskPhone('input[name="phone"]')
