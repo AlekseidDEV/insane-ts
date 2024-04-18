@@ -1,5 +1,6 @@
 
 import { numAccordion } from "./modules/accordNumber";
+import { formSend } from "./modules/formSend";
 import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { smoothScroll } from "./modules/smoothScroll";
@@ -18,4 +19,11 @@ document.querySelector('.button-footer')?.addEventListener('click', (e) => {
 })
 
 maskPhone('input[name="phone"]')
+
+formSend("feedback1")
+formSend("feedback2")
+formSend("feedback3")
+formSend("feedback4")
+formSend("feedback5")
+formSend("feedback6")
 
