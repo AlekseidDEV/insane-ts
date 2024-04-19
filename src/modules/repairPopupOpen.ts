@@ -1,5 +1,7 @@
+import { Div } from "src/models/aliases"
+
 export const repairPopupOpen = () => {
-    const windowRepair: HTMLDivElement | null = document.querySelector('.popup-repair-types')
+    const windowRepair: Div | null = document.querySelector('.popup-repair-types')
 
     windowRepair!.style.visibility = 'visible' 
 

@@ -1,7 +1,9 @@
+import { Div, Link } from "src/models/aliases"
+
 export const numAccordion = () => {
-    const arrowAccord: HTMLDivElement | null = document.querySelector('.header-contacts__arrow')
-    const accordWrapper: HTMLDivElement | null = document.querySelector('.header-contacts__phone-number-accord')
-    const linkNumber: HTMLAnchorElement | null = accordWrapper!.querySelector('a')
+    const arrowAccord: Div | null = document.querySelector('.header-contacts__arrow')
+    const accordWrapper: Div | null = document.querySelector('.header-contacts__phone-number-accord')
+    const linkNumber: Link | null = accordWrapper!.querySelector('a')
 
     let clicker = false
 

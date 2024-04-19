@@ -1,10 +1,12 @@
+import { Div, Elem } from "src/models/aliases"
+
 export const tips = () => {
-    const wrapperTips: HTMLDivElement | null = document.querySelector('.tips-wrapper')
+    const wrapperTips: Div | null = document.querySelector('.tips-wrapper')
 
     let stateVisible = false
 
-    const isVisibleTips = (target: HTMLDivElement | null, text: HTMLDivElement | null, childElem: HTMLDivElement | null) => {
-        const row: HTMLElement | null = childElem!.parentElement
+    const isVisibleTips = (target: Div | null, text: Div | null, childElem: Div | null) => {
+        const row: Elem | null = childElem!.parentElement
 
         let rect = target!.getBoundingClientRect()
         
@@ -24,9 +26,9 @@ export const tips = () => {
         }
     }
 
-    const openTips = (target: HTMLDivElement | null) => {
+    const openTips = (target: Div | null) => {
         const numberItem = target!.querySelector('span')
-        const tip: HTMLDivElement | null = document.querySelector(`.formula-item-popup-${numberItem?.textContent}`)
+        const tip: Div | null = document.querySelector(`.formula-item-popup-${numberItem?.textContent}`)
         const textTip = tip!.querySelector('div')
 
         stateVisible = !stateVisible
@@ -41,13 +43,13 @@ export const tips = () => {
     }
     
     wrapperTips?.addEventListener('mouseover', (e) => {
-        if((e.target as HTMLElement).closest('.formula-item__icon')){
-            openTips((e.target as HTMLDivElement).closest('.formula-item'))
+        if((e.target as Elem).closest('.formula-item__icon')){
+            openTips((e.target as Div).closest('.formula-item'))
         }
     })
     wrapperTips?.addEventListener('mouseout', (e) => {
-        if((e.target as HTMLElement).closest('.formula-item__icon')){
-            openTips((e.target as HTMLDivElement).closest('.formula-item'))
+        if((e.target as Elem).closest('.formula-item__icon')){
+            openTips((e.target as Div).closest('.formula-item'))
         }
     })
 }
