@@ -1,4 +1,5 @@
 
+import { Form } from "./models/aliases";
 import { numAccordion } from "./modules/accordNumber";
 import { formSend } from "./modules/formSend";
 import { maskPhone } from "./modules/helpers/inputMask";
@@ -27,12 +28,12 @@ document.querySelector('.button-footer')?.addEventListener('click', (e) => {
 
 maskPhone('input[name="phone"]')
 
-formSend("feedback1")
-formSend("feedback2")
-formSend("feedback3")
-formSend("feedback4")
-formSend("feedback5")
-formSend("feedback6")
+document.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    formSend((e.target as Form))
+})
+
 
 privacyPopup()
 tips()
@@ -41,4 +42,6 @@ repairSliders()
 repairSliderMob("#nav-arrow-repair-left_base", '#nav-arrow-repair-right_base')
 portfolioSlider(".portfolio-slider-wrap", "#portfolio-arrow_right", "#portfolio-arrow_left", ".portfolio-slider__slide-frame", '.portfolio-slider__slide.fade-tab', '.slider_track')
 transparancy()
+
+// document.addEventListener('click')
 
