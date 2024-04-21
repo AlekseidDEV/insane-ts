@@ -9,6 +9,12 @@ export const galleryPortfolio = () =>{
 
     let count = 0
 
+    slides.forEach((slide, index) => {
+        if((slide as Div).classList.contains('actvie_portfolio_slider')){
+            count = index
+        }
+    })
+
     popupGallery!.style.visibility = 'visible';
     totalSpan!.textContent = `${slides.length}`
 
@@ -19,7 +25,7 @@ export const galleryPortfolio = () =>{
         if(count > slides.length - 1){
             count = 0
         }
-        
+
         if(count < 0){
             count = slides.length - 1
         }
