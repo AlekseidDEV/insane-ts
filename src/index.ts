@@ -10,6 +10,7 @@ import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
 import { smoothScroll } from "./modules/smoothScroll";
 import { tips } from "./modules/tips";
+import { transparancy } from "./modules/trasparancy";
 
 numAccordion()
 
@@ -39,4 +40,5 @@ mobileTips()
 repairSliders()
 repairSliderMob("#nav-arrow-repair-left_base", '#nav-arrow-repair-right_base')
 portfolioSlider(".portfolio-slider-wrap", "#portfolio-arrow_right", "#portfolio-arrow_left", ".portfolio-slider__slide-frame", '.portfolio-slider__slide.fade-tab', '.slider_track')
+transparancy()
 
