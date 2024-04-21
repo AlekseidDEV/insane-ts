@@ -2283,6 +2283,12 @@ div.wave-block:nth-child(17):after {
     z-index: 1;
 }
 
+.slider_track{
+    display: flex;
+    width: 100%;
+    transition: 0.3s;
+}
+
 @media (max-width: 1140px) {
     .portfolio-slider {
         width: 92%;
@@ -5984,6 +5990,11 @@ div.wave-block:nth-child(17):after {
 .popup-portfolio-slider__slide {
     height: 100%;
     overflow: hidden;
+    display: none;
+}
+
+.popup-portfolio-slider__slide.actvie_portfolio_slider{
+    display: flex;
 }
 
 @media (max-width: 575px) {
@@ -6022,6 +6033,11 @@ div.wave-block:nth-child(17):after {
     margin-right: auto;
     color: #322823;
 }
+
+.popup-portfolio-text.text-content_active{
+    display: flex;
+}
+
 
 @media (max-width: 1024px) and (min-width: 576px) {
     .popup-portfolio-text {

@@ -4,6 +4,7 @@ import { formSend } from "./modules/formSend";
 import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { mobileTips } from "./modules/mobileTips";
+import { portfolioSlider } from "./modules/portfolioSlider";
 import { privacyPopup } from "./modules/privacyPopup";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
@@ -37,5 +38,5 @@ tips()
 mobileTips()
 repairSliders()
 repairSliderMob("#nav-arrow-repair-left_base", '#nav-arrow-repair-right_base')
-
+portfolioSlider(".portfolio-slider-wrap", "#portfolio-arrow_right", "#portfolio-arrow_left", ".portfolio-slider__slide-frame", '.portfolio-slider__slide.fade-tab', '.slider_track')
 
