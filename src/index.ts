@@ -5,8 +5,8 @@ import { formSend } from "./modules/formSend";
 import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { mobileTips } from "./modules/mobileTips";
+import { openPopup } from "./modules/openPopup";
 import { portfolioSlider } from "./modules/portfolioSlider";
-import { privacyPopup } from "./modules/privacyPopup";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
 import { smoothScroll } from "./modules/smoothScroll";
@@ -31,11 +31,9 @@ maskPhone('input[name="phone"]')
 document.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    formSend((e.target as Form))
+    formSend(e, (e.target as Form))
 })
 
-
-privacyPopup()
 tips()
 mobileTips()
 repairSliders()
@@ -45,7 +43,9 @@ transparancy()
 
 document.addEventListener('click', (e) => {
     if((e.target as Elem).matches('.button.button_wide')){
-        
+        openPopup(".popup-consultation", '.close-consultation')
+    } else if((e.target as Elem).matches(".link-privacy")){
+        openPopup('.popup-privacy', '.close-privacy')
     }
 })
 

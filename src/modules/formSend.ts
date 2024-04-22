@@ -1,8 +1,8 @@
 import { DataForm } from "src/models/dataForm"
 import { rennderMessage } from "./renderMessage"
-import { Form, Input } from "src/models/aliases"
+import { Div, Form, Input } from "src/models/aliases"
 
-export const formSend = (form: Form | undefined) => {
+export const formSend = (e: Event, form: Form | undefined) => {
     const allInputs = form!.querySelectorAll('input')
     const checkbox: Form | null = form!.querySelector('input[type="checkbox"]')
     const formData = new FormData(form)
@@ -43,6 +43,10 @@ export const formSend = (form: Form | undefined) => {
                 })
                 checkbox!.checked = false
                 rennderMessage(0)
+
+                if((e.target as Form).id === 'feedback6'){
+                    (form!.closest('.popup') as Div).style.visibility = 'hidden'
+                }
             })
             .catch(() => rennderMessage(2))
     } else{

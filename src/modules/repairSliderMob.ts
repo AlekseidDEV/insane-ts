@@ -1,5 +1,5 @@
 import {Div, Elem } from "src/models/aliases"
-import { repairPopupOpen } from "./repairPopupOpen"
+import { openPopup } from "./openPopup"
 
 export const repairSliderMob = (leftArrow: string, rightArrow: string) => {
     const navCarousel: Div | null = document.querySelector('.nav-wrap-repair')
@@ -68,5 +68,7 @@ export const repairSliderMob = (leftArrow: string, rightArrow: string) => {
             observerNext.observe(btns[btns.length - 1])
         }
     })
-    linkPrice?.addEventListener('click', repairPopupOpen)
+    linkPrice?.addEventListener('click', () => {
+        openPopup(".popup-repair-types", '.close')
+    })
 }

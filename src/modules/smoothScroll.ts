@@ -1,4 +1,4 @@
-import {repairPopupOpen } from "./repairPopupOpen"
+import { openPopup } from "./openPopup"
 
 export const smoothScroll = (id: string) => {
     if(id){
@@ -7,6 +7,6 @@ export const smoothScroll = (id: string) => {
             block: 'start'
         })
     } else{
-        repairPopupOpen()
+        openPopup(".popup-repair-types", '.close')
     }
 }
