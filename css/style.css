@@ -9092,3 +9092,7 @@ strong {
         visibility: visible;
     }
 }
+
+.active_o {
+    border: 3px solid #F48922 !important;
+}
