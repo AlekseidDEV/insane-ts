@@ -9,6 +9,7 @@ import { openPopup } from "./modules/openPopup";
 import { portfolioSlider } from "./modules/portfolioSlider";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
+import { sliderReviews } from "./modules/sliderReviews";
 import { smoothScroll } from "./modules/smoothScroll";
 import { tips } from "./modules/tips";
 import { transparancy } from "./modules/trasparancy";
@@ -40,6 +41,7 @@ repairSliders()
 repairSliderMob("#nav-arrow-repair-left_base", '#nav-arrow-repair-right_base')
 portfolioSlider(".portfolio-slider-wrap", "#portfolio-arrow_right", "#portfolio-arrow_left", ".portfolio-slider__slide-frame", '.portfolio-slider__slide.fade-tab', '.slider_track')
 transparancy()
+sliderReviews()
 
 document.addEventListener('click', (e) => {
     if((e.target as Elem).matches('.button.button_wide')){
