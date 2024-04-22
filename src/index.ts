@@ -10,6 +10,7 @@ import { openPopup } from "./modules/openPopup";
 import { portfolioSlider } from "./modules/portfolioSlider";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
+import { repairTable } from "./modules/repairTable";
 import { sliderReviews } from "./modules/sliderReviews";
 import { smoothScroll } from "./modules/smoothScroll";
 import { tips } from "./modules/tips";
