@@ -1,4 +1,5 @@
-import { openPopup } from "./openPopup"
+
+import { repairTable } from "./repairTable"
 
 export const smoothScroll = (id: string) => {
     if(id){
@@ -7,6 +8,6 @@ export const smoothScroll = (id: string) => {
             block: 'start'
         })
     } else{
-        openPopup(".popup-repair-types", '.close')
+        repairTable()
     }
 }

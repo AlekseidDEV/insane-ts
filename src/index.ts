@@ -3,11 +3,13 @@ import { Elem, Form } from "./models/aliases";
 import { numAccordion } from "./modules/accordNumber";
 import { accordion } from "./modules/accordion";
 import { formSend } from "./modules/formSend";
+import { getDataTable } from "./modules/getDataTable";
 import { maskPhone } from "./modules/helpers/inputMask";
 import { menuFunc } from "./modules/menu";
 import { mobileTips } from "./modules/mobileTips";
 import { openPopup } from "./modules/openPopup";
 import { portfolioSlider } from "./modules/portfolioSlider";
+import { renderTable } from "./modules/renderTable";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
 import { repairTable } from "./modules/repairTable";
@@ -34,6 +36,12 @@ portfolioSlider(".portfolio-slider-wrap", "#portfolio-arrow_right", "#portfolio-
 transparancy()
 sliderReviews()
 accordion()
+
+getDataTable("0").then((data) => {
+    renderTable(data)
+}).catch((error) => {
+    console.error(error);
+})
 
 document.addEventListener('click', (e) => {
     if((e.target as Elem).matches('.button.button_wide')){

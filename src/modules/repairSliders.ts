@@ -1,5 +1,5 @@
 import {Btn, Div, Span} from "src/models/aliases"
-import { openPopup } from "./openPopup"
+import { repairTable } from "./repairTable"
 
 export const repairSliders = () => {
     const sliderWrapper: Div | null = document.querySelector('.repair-types-slider-wrap')
@@ -65,7 +65,7 @@ export const repairSliders = () => {
         if((e.target as Div).localName === 'button'){
             changeListSlider((e.target as Btn), 'active', Number((e.target as Btn).dataset['index']), "active-slider")
         } else if((e.target as Div).closest('.link-list-repair.mobile-hide')){
-            openPopup(".popup-repair-types", '.close')
+            repairTable()
         }
     })
 }
