@@ -9075,7 +9075,7 @@ strong {
 }
 
 .slider-dots {
-    display: none;
+    display: flex;
 }
 
 
