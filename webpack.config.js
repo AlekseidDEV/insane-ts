@@ -1,28 +1,32 @@
-const path = require('path')
+const path = require("path");
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+const isDev = process.env.NODE_ENV === "development";
+const isProd = !isDev;
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.ts',
+  mode: "development",
+  entry: {
+    layout: path.resolve(__dirname, "src", "index.ts"),
+    admin: path.resolve(__dirname, "admin", "src", "tablePage.ts"),
+    autho: path.resolve(__dirname, "admin", "src", "autorizedPage.ts"),
+  },
 
-    module: {
-        rules: [
-            {
-             test: /\.ts$/, 
-             use: 'ts-loader',
-             exclude: /node_modules/
-            }
-        ]
-    },
-
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
+    ],
+  },
 
-      output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-      },
-}
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
+
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+  },
+};

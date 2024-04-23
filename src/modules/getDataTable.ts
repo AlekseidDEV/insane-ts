@@ -1,5 +1,3 @@
-export const getDataTable = (searchUrl: string) => {
-    let urlHost = "http://localhost:1808/"
-
-    return fetch(urlHost + searchUrl).then((res) => res.json())
-}
+export const getDataTable = () => {
+  return fetch("http://localhost:1808/service").then((res) => res.json());
+};

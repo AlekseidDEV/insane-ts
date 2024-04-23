@@ -1,3 +1,3 @@
-export interface DataForm{
-    [key: string]: FormDataEntryValue
+export interface DataForm {
+  [key: string]: FormDataEntryValue;
 }

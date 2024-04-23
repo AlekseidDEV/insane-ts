@@ -7,7 +7,8 @@
     "dev": "cross-env NODE_ENV=development webpack --watch --mode development",
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "clear": "rd /s /q dist",
-    "server": "json-server --watch db/db.json --port=1808"
+    "server": "json-server --watch db/db.json --port=1808",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss}'"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "json-server": "^0.16.3",
+    "prettier": "3.2.5",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"

@@ -22,13 +22,17 @@ export function maskPhone(selector: string, masked = "+7 (___) ___-__-__") {
       })
       .replace(/[+()]/g, "\\$&");
     let numReg = new RegExp("^" + reg + "$");
-    if (!numReg.test((event.target as Input).value) ||(event.target as Input).value.length < 5) {
+    if (
+      !numReg.test((event.target as Input).value) ||
+      (event.target as Input).value.length < 5
+    ) {
       (event.target as Input).value = newValue;
     }
-    if (event.type === "blur" &&(event.target as Input).value.length < 5) {
+    if (event.type === "blur" && (event.target as Input).value.length < 5) {
       (event.target as Input).value = "";
-    } if(event.type === 'mouseup'){
-        (event.target as Input).setSelectionRange(4, 4)
+    }
+    if (event.type === "mouseup") {
+      (event.target as Input).setSelectionRange(4, 4);
     }
   }
 
@@ -37,5 +41,5 @@ export function maskPhone(selector: string, masked = "+7 (___) ___-__-__") {
     elem.addEventListener("focus", mask);
     elem.addEventListener("blur", mask);
     elem.addEventListener("mouseup", mask);
-  })
+  });
 }
