@@ -7,28 +7,11 @@ export const transparancy = () => {
   const insideSlides = document.querySelectorAll(transpancyEnum.slides);
   const totalSpan = popupTrans!.querySelector(transpancyEnum.totalCount);
   const curentSpan = popupTrans!.querySelector(transpancyEnum.curentCount);
-  const items = sliderBlock!.querySelectorAll(transpancyEnum.item);
 
   let countInside = 0;
-  let count = 0;
 
   totalSpan!.textContent = `${insideSlides.length}`;
   curentSpan!.textContent = "1";
-
-  const mobileTrans = () => {
-    const activeItem = document.querySelector(transpancyEnum.itemActive);
-
-    if (count > items.length - 1) {
-      count = 0;
-    }
-
-    if (count < 0) {
-      count = items.length - 1;
-    }
-
-    activeItem?.classList.remove(transpancyEnum.itemActive.slice(1));
-    items[count].classList.add(transpancyEnum.itemActive.slice(1));
-  };
 
   const startSlider = (activeClass: string) => {
     const activeSlide = document.querySelector(activeClass);
@@ -62,12 +45,6 @@ export const transparancy = () => {
   sliderBlock?.addEventListener("click", (e: Event) => {
     if ((e.target as Elem).matches(".transparency-item__img")) {
       openPopup(Number((e.target as Elem).dataset["item"]));
-    } else if ((e.target as Elem).closest("#transparency-arrow_left")) {
-      count--;
-      mobileTrans();
-    } else if ((e.target as Elem).closest("#transparency-arrow_right")) {
-      count++;
-      mobileTrans();
     }
   });
 

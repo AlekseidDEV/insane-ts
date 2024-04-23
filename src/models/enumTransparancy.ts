@@ -1,5 +1,5 @@
 export const enum transpancyEnum {
-  slider = ".transparency-slider-wrap",
+  slider = ".transparency-slider",
   popup = ".popup-transparency",
   slides = ".popup-transparency-slider__slide",
   totalCount = ".slider-counter-content__total",

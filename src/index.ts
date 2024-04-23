@@ -17,6 +17,7 @@ import { sliderReviews } from "./modules/sliderReviews";
 import { smoothScroll } from "./modules/smoothScroll";
 import { tips } from "./modules/tips";
 import { tokenUser } from "./modules/tokenUser";
+import { transparancyMob } from "./modules/transparancyMob";
 import { transparancy } from "./modules/trasparancy";
 
 numAccordion();
@@ -45,6 +46,7 @@ transparancy();
 sliderReviews();
 accordion();
 tokenUser();
+transparancyMob()
 
 getDataTable()
   .then((data) => {
