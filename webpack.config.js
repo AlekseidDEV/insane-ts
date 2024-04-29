@@ -7,8 +7,8 @@ module.exports = {
   mode: "development",
   entry: {
     layout: path.resolve(__dirname, "src", "index.ts"),
-    admin: path.resolve(__dirname, "admin", "src", "tablePage.ts"),
-    autho: path.resolve(__dirname, "admin", "src", "autorizedPage.ts"),
+    admin: path.resolve(__dirname, "src",  "tablePage.ts"),
+    autho: path.resolve(__dirname, "src", "autorizedPage.ts"),
   },
 
   module: {

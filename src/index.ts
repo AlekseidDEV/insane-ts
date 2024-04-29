@@ -10,6 +10,7 @@ import { mobileTips } from "./modules/mobileTips";
 import { openPopup } from "./modules/openPopup";
 import { portfolioSlider } from "./modules/portfolioSlider";
 import { renderTable } from "./modules/renderTable";
+import { renderTableBtns } from "./modules/renderTableBts";
 import { repairSliderMob } from "./modules/repairSliderMob";
 import { repairSliders } from "./modules/repairSliders";
 import { repairTable } from "./modules/repairTable";
@@ -55,6 +56,8 @@ getDataTable()
     );
 
     renderTable(filteredData);
+    renderTableBtns(data)
+    
   })
   .catch((error) => {
     console.error(error);

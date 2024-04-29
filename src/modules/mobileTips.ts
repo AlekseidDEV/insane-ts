@@ -9,7 +9,6 @@ export const mobileTips = () => {
 
   let slideIndex: number = 1;
   let posIndex = 0;
-  let clicker = false;
 
   const appendSlide = () => {
     if (posIndex > slides.length - 1) {
@@ -27,7 +26,6 @@ export const mobileTips = () => {
 
   const prev = (curentSlide: Div, classElem: string) => {
     curentSlide.classList.remove(classElem);
-    clicker = false;
   };
 
   const next = (curentSlide: Div, classElem: string) => {
@@ -36,7 +34,6 @@ export const mobileTips = () => {
 
   const swithSlides = (e: Event) => {
     prev(slides[slideIndex] as Div, "active-item");
-    prev(slides[slideIndex] as Div, "active-item-pop");
 
     if ((e.target as Elem).closest("#formula-arrow_left")) {
       slideIndex--;
@@ -59,20 +56,5 @@ export const mobileTips = () => {
     next(slides[slideIndex] as Div, "active-item");
   };
 
-  const tipsOpen = (target: Div) => {
-    if (clicker) {
-      target!.classList.add("active-item-pop");
-    } else {
-      target!.classList.remove("active-item-pop");
-    }
-  };
-
-  sliderWrapp?.addEventListener("click", (e) => {
-    if ((e.target as Elem).closest(".formula-slider__slide.active-item")) {
-      clicker = !clicker;
-      tipsOpen(e.target as Div);
-    } else {
-      swithSlides(e);
-    }
-  });
+  sliderWrapp?.addEventListener("click", swithSlides);
 };
