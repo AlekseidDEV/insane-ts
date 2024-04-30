@@ -629,20 +629,24 @@
       "units": "100 слов в секунду",
       "cost": "Безценно",
       "id": "TfEQOek"
+    },
+    {
+      "type": "Муж на час",
+      "name": "TEST",
+      "units": "10250",
+      "cost": "1000 $",
+      "id": "TKa5pRV"
     }
   ],
-
   "user": [
     {
       "login": "user",
       "pass": "12345"
     },
-
     {
       "login": "user1",
       "pass": "123456"
     },
-
     {
       "login": "user2",
       "pass": "1234567"
